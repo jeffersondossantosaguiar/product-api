@@ -1,18 +1,18 @@
 ###GET - List products
-GET http://localhost:8080/api/v1/products
+GET http://localhost:8080/v1/products
 
 ###GET - Get a product by ID
-GET http://localhost:8080/api/v1/products/1
+GET http://localhost:8080/v1/products/1
 
 ###POST - Create a product
-POST http://localhost:8080/api/v1/products
+POST http://localhost:8080/v1/products
 
 {
   "name": "Teste"
 }
 
 ###PUT - Update a product
-PUT http://localhost:8080/api/v1/products/1
+PUT http://localhost:8080/v1/products/1
 
 {
   "name": "Teste",
@@ -20,4 +20,4 @@ PUT http://localhost:8080/api/v1/products/1
 }
 
 ###DELETE - Delete a product by ID
-DELETE http://localhost:8080/api/v1/products/2
+DELETE http://localhost:8080/v1/products/2
