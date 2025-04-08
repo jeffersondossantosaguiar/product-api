@@ -2,24 +2,21 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jeffersondossantosaguiar/product-api/internal/domain"
 	"github.com/jeffersondossantosaguiar/product-api/internal/handler"
 	"github.com/jeffersondossantosaguiar/product-api/internal/infra"
+	"github.com/jeffersondossantosaguiar/product-api/internal/routes"
 	"github.com/jeffersondossantosaguiar/product-api/internal/usecase"
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
 )
 
 func main() {
-	db, _ := gorm.Open(sqlite.Open("products.db"), &gorm.Config{})
-	db.AutoMigrate(&domain.Product{})
+	db := infra.InitDB()
 
 	productRepo := infra.NewProductGormRepository(db)
 	productUseCase := usecase.NewProductUsecase(productRepo)
 	productHandler := handler.NewProductHandler(productUseCase)
 
 	app := gin.Default()
-	productHandler.RegisterRoutes(app)
+	routes.RegisterRoutes(app, productHandler)
 
 	app.Run(":8080")
 

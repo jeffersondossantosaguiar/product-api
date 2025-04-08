@@ -17,17 +17,6 @@ func NewProductHandler(u *usecase.ProductUsecase) *ProductHandler {
 	return &ProductHandler{usecase: u}
 }
 
-func (h *ProductHandler) RegisterRoutes(app *gin.Engine) {
-	products := app.Group("/v1/products")
-	{
-		products.GET("/:id", h.GetByID)
-		products.GET("", h.GetAll)
-		products.POST("", h.Create)
-		products.PUT("/:id", h.Update)
-		products.DELETE("/:id", h.Delete)
-	}
-}
-
 func (h *ProductHandler) GetByID(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 	product, err := h.usecase.GetByID(uint(id))
