@@ -2,9 +2,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jefferson/product-api/config"
-	"github.com/jefferson/product-api/models"
-	"github.com/jefferson/product-api/routes"
+	"github.com/jeffersondossantosaguiar/product-api/config"
+	"github.com/jeffersondossantosaguiar/product-api/models"
+	"github.com/jeffersondossantosaguiar/product-api/routes"
 )
 
 func main() {

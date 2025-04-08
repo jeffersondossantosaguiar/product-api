@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jefferson/product-api/handlers"
+	"github.com/jeffersondossantosaguiar/product-api/handlers"
 )
 
 func SetupRoutes(app *gin.Engine) {

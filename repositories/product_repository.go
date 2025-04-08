@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"github.com/jefferson/product-api/config"
-	"github.com/jefferson/product-api/models"
+	"github.com/jeffersondossantosaguiar/product-api/config"
+	"github.com/jeffersondossantosaguiar/product-api/models"
 )
 
 func GetAllProducts() []models.Product {

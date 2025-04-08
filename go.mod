@@ -1,4 +1,4 @@
-module github.com/jefferson/product-api
+module github.com/jeffersondossantosaguiar/product-api
 
 go 1.24.1
 

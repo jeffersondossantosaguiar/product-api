@@ -5,8 +5,8 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jefferson/product-api/models"
-	"github.com/jefferson/product-api/repositories"
+	"github.com/jeffersondossantosaguiar/product-api/models"
+	"github.com/jeffersondossantosaguiar/product-api/repositories"
 )
 
 func GetProducts(c *gin.Context) {
