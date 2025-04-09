@@ -4,12 +4,14 @@ import (
 	"log"
 
 	"github.com/jeffersondossantosaguiar/product-api/internal/domain"
-	"gorm.io/driver/sqlite"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 func InitDB() *gorm.DB {
-	db, err := gorm.Open(sqlite.Open("products.db"), &gorm.Config{})
+	dsn := "host=db user=test password=test dbname=product port=5432 sslmode=disable"
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
